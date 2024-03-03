@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    create:
+        container_name: pufferpanel
+        ports:
+            - '8080:8080'
+            - '5657:5657'
+            - '25565:25565'
+        volumes:
+            - '/home/smugarcher/docker/pufferpanel/config:/etc/pufferpanel'
+            - '/var/lib/pufferpanel:/var/lib/pufferpanel'
+        restart: on-failure
+        image:  pufferpanel/pufferpanel:latest
